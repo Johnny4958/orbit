@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="38%" cy="30%" r="85%">
+      <stop offset="0" stop-color="#4b1fa0"/>
+      <stop offset="0.55" stop-color="#22104f"/>
+      <stop offset="1" stop-color="#0b0620"/>
+    </radialGradient>
+    <linearGradient id="moon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe08a"/>
+      <stop offset="0.5" stop-color="#ff8fc8"/>
+      <stop offset="1" stop-color="#c86bff"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5ef0d0"/>
+      <stop offset="0.5" stop-color="#8fb6ff"/>
+      <stop offset="1" stop-color="#ff7ac6"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <mask id="crescent">
+      <rect width="512" height="512" fill="#000"/>
+      <circle cx="256" cy="256" r="118" fill="#fff"/>
+      <circle cx="310" cy="218" r="104" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <g fill="#fff">
+    <circle cx="92" cy="104" r="4" opacity=".9"/>
+    <circle cx="420" cy="88" r="5" opacity=".95"/>
+    <circle cx="440" cy="380" r="3.5" opacity=".8"/>
+    <circle cx="70" cy="400" r="3" opacity=".7"/>
+    <circle cx="150" cy="60" r="2.5" opacity=".7"/>
+    <circle cx="380" cy="450" r="2.5" opacity=".6"/>
+    <path d="M400 160 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6z" opacity=".95"/>
+    <path d="M118 300 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" opacity=".85"/>
+  </g>
+  <!-- back half of the orbit ring -->
+  <ellipse cx="256" cy="262" rx="196" ry="62" transform="rotate(-18 256 262)" fill="none" stroke="url(#ring)" stroke-width="14" opacity=".45"/>
+  <rect width="512" height="512" fill="url(#moon)" mask="url(#crescent)" filter="url(#glow)"/>
+  <!-- front half of the orbit ring -->
+  <path d="M 69.6 322.6 A 196 62 -18 0 0 442.4 201.4" fill="none" stroke="url(#ring)" stroke-width="14" stroke-linecap="round" transform="rotate(0)"/>
+  <circle cx="424" cy="232" r="20" fill="#5ef0d0" filter="url(#glow)"/>
+  <circle cx="418" cy="226" r="7" fill="#fff" opacity=".7"/>
+</svg>
